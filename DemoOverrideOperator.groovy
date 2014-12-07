@@ -28,10 +28,14 @@ class Money {
 		}
 		return new Money(amount + other.amount, currency)
 	}
+	String toString(){
+		return "${this.currency}${this.amount}"
+	}
 }
 
-def buck = new Money(1, 'USD')
+def buck = new Money(1, '$')
 assert buck
-assert buck == new Money(1, 'USD')
-assert buck + buck == new Money(2, 'USD')
+assert buck == new Money(1, '$')
+assert buck + buck == new Money(2, '$')
+println "${buck} + ${buck} + ${buck} = ${(buck + buck + buck)}"
 
